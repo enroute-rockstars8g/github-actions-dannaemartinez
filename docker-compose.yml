@@ -12,6 +12,7 @@ services:
     ports:
       - "100${PORT}:55${PORT}"
     volumes:
+      #- "${POSTGRES_VOLUME_PATH}:/usr/src/postgres"
       - "${POSTGRES_VOLUME_PATH}:/usr/src/postgres"
     networks:
       - our-library-net
