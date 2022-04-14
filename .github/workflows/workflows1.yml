@@ -12,17 +12,17 @@ jobs:
   simple_build:
     runs-on: ubuntu-latest
     env:
-      POSTGRES_USER: dannae_martinez
-      POSTGRES_PASSWORD: 3NR0UT31245dan
-      POSTGRES_DB: dannae_martinezdb
+      PSQL_USER: dannae_martinez
+      PSQL_PASS: 3NR0UT31245dan
+      PSQL_DB: dannae_martinezdb
       JWT_TOKEN_TIME: "120"
     services:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_USER: ${{ env.POSTGRES_USER }}
-          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+          POSTGRES_USER: ${{ env.PSQL_USER }}
+          POSTGRES_PASSWORD: ${{ env.PSQL_PASS }}
+          POSTGRES_DB: ${{ env.PSQL_DB }}
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
